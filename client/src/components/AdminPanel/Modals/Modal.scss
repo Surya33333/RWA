@@ -1,0 +1,55 @@
+.mainmodal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(49,49,49,0.8);
+    z-index:1;
+    width: 100vw;
+    height: 100vh;
+
+    .mapmodal{
+      position: relative;
+      top: 20px;
+      left: 20px;
+      width: fit-content;
+      height: 200px;
+      background-color: white;
+      margin: auto;
+      border: 2px solid lightgreen;
+      padding:10px;
+      border-radius: 5px;
+
+  .head{
+    display: flex;
+    gap:20px;
+    justify-content: space-between;
+
+    .modalhead{
+      font-weight: bold;
+    }
+    .modalclosebtn{
+      cursor: pointer;
+      font-weight: bold;
+      color:black;
+    }
+  }
+
+  .foot{
+
+    cursor: pointer;
+    float: right;
+    vertical-align: top;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    
+    button{
+      border-radius: 5px;
+      border:none;
+      outline:none;
+    }
+  }
+}
+}
