@@ -9,6 +9,8 @@ import { useForm } from 'react-hook-form';
 import { Form, Button, FormGroup } from 'semantic-ui-react';
 import { Person, Pencil, CheckCircleFill, Camera, GeoAltFill } from "react-bootstrap-icons";
 import profile from '../../../Images/profile.jpg';
+import Modal from '../Modals/Modal.js';
+
 const usertoken = sessionStorage.getItem('token');
 const username = JSON.parse(sessionStorage.getItem('username'));
 const useremail = JSON.parse(sessionStorage.getItem('useremail'));
@@ -20,16 +22,20 @@ const Account = () => {
   const [Useremail, setEmail] = useState();
   const [Mobile, setMobile] = useState();
   const [Location, setLocation] = useState();
+  const [Pincode, setPincode] = useState();
 
   const [error, setErrors] = useState([]);
   const [message, setSuccess] = useState([]);
   const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const [show, showModal] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data.name);
     console.log(data.email);
     console.log(data.location);
     console.log(data.mobile);
+    console.log(data.pincode);
   }
 
   return (
@@ -53,6 +59,11 @@ const Account = () => {
                   <label className="imglabel">Update</label>
                 </div>
               </div>
+
+              <div>
+                  {show && <Modal closeModal={showModal}/>}
+              </div>              
+              
               <div className="profile">
                 <p className="title">Update Profile </p>
                   <Form onSubmit={handleSubmit(onSubmit)}>
@@ -60,7 +71,6 @@ const Account = () => {
                       <label>Name<i className="required">*</i></label>
                       <input
                         defaultValue={username}
-                        placeholder='Name'
                         type="text"
                         {...register("name",
                           {
@@ -69,12 +79,11 @@ const Account = () => {
                           })}
                       />
                       {errors.name && <p className="form-error">UserName Should have 3 letters</p>}
-                    </Form.Field>
+                    </Form.Field> 
                     <Form.Field className="forminput">
                       <label>Email<i className="required">*</i></label>
                       <input
                         defaultValue={useremail}
-                        placeholder='Email'
                         type="email"
                         {...register("email", {
                           required: true,
@@ -86,8 +95,7 @@ const Account = () => {
                     <Form.Field className="forminput">
                       <label>Mobile<i className="required">*</i></label>
                       <input
-                        placeholder='Mobile'
-                        type="number"
+                        type="text"
                         {...register("mobile", {
                           required: true,
                           minLength: 10, maxLength: 10
@@ -98,15 +106,36 @@ const Account = () => {
                     <Form.Field className="forminput loc">
                       <label>Location<i className="required">*</i></label>
                       <input
-                        placeholder='Location'
                         type="text"
                         {...register("location", {
                           required: true,
                           minLength: 10, maxLength: 300
                         })}
                       />
-                      <span className="icon"><GeoAltFill/></span>
+                      <span className="icon"><GeoAltFill  onClick={()=>{showModal(true)}} /></span>
                       {errors.location && <p className="form-error">Location Is Required</p>}
+                    </Form.Field>
+                    <Form.Field className="forminput pincode">
+                      <label>Pincode<i className="required">*</i></label>
+                      <input
+                        type="text"
+                        {...register("pincode", {
+                          required: true,
+                          minLength: 6, maxLength: 6
+                        })}
+                      />
+                      {errors.pincode && <p className="form-error">Pincode Is Required</p>}
+                    </Form.Field>
+                    <Form.Field className="forminput pincode">
+                      <label>Pincode<i className="required">*</i></label>
+                      <input
+                        type="text"
+                        {...register("pincode", {
+                          required: true,
+                          minLength: 6, maxLength: 6
+                        })}
+                      />
+                      {errors.pincode && <p className="form-error">Pincode Is Required</p>}
                     </Form.Field>
                     <Button type='submit' className="button">Save</Button><br></br>
                   </Form>

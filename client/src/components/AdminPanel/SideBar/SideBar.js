@@ -1,33 +1,57 @@
-import React from "react";
+import {React, useState} from "react";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import SideNav, {Toggle,Nav,NavItem,NavIcon,NavText} from "@trendmicro/react-sidenav";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./SideBar.scss";
 import { Link } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
 
+const Menu = [
+  {
+    title: "Dashboard",
+    path: "/dashboard",
+    icon: <Icon.GridFill />,
+  },
+  {
+    title: "Orders",
+    path: "/orders",
+    icon: <Icon.HouseFill />,
+  },
+  {
+    title: "Account",
+    path: "/account",
+    icon: <Icon.PersonFill />,
+  },
+  {
+    title: "Settings",
+    path: "/settings",
+    icon: <Icon.GearFill />,
+  },
+  {
+    title: "Logout",
+    path: "/login",
+    icon: <Icon.BoxArrowLeft />,
+    action: function logout() {
+      sessionStorage.clear(); window.location.reload();
+    }
+  },
+]
 
-class SideNavBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isVisible: true
-    };
-  }
+const SideNavBar = () => {
 
-  render() {
+  const [open, setopen] = useState(false);
+
     return (
-      <div className="sidebar">
-        <div className="top">
-          <span className="logo">LOGO</span>
+      <div className={`sidebar ${open ? "w-60": "w-20" } duration-300`}>
+        <div className="top"><Icon.ArrowLeftShort onClick={()=>{setopen(!open)}} className={`menutoggle rounded-full  ${!open && 'rotate-180 mr-5' }`}/>
+          <span className={`logo ${open ? "": "hidden" }`}>LOGO</span>
         </div><hr></hr>
         <div className="center">
           <ul>
-            <Link  to="/dashboard" style={{textDecoration:"none"}} ><li><Icon.GridFill className="icon" /><span>Dashboard</span></li></Link>
-            <Link to="/orders" style={{textDecoration:"none"}} ><li><Icon.HouseFill className="icon" /><span>My Orders</span></li></Link>
-            <Link to="/account" style={{textDecoration:"none"}} ><li><Icon.PersonFill className="icon" /><span>My Account</span></li></Link>
-            <Link to="/settings" style={{textDecoration:"none"}} ><li><Icon.GearFill className="icon" /><span>Settings</span></li></Link>
-            <li><Icon.BoxArrowRight className="icon" /><span onClick={()=>{sessionStorage.clear(); window.location.reload();}}>Logout</span></li>
+            {Menu.map((item,index)=>{
+              return <Link onClick={item.action} key={index} to={item.path} style={{textDecoration:"none"}} ><li><span className="icon">{item.icon}</span><span className={`${open ? "": "scale-0" }`}>{item.title}</span></li></Link>
+            })}
           </ul>
         </div>
         <div className="bottom">
@@ -36,7 +60,6 @@ class SideNavBar extends React.Component {
         </div>
       </div>
     ); 
-  }
 }
 
 export default SideNavBar;

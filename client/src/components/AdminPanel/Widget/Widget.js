@@ -9,7 +9,7 @@ const Widget = ({type}) =>{
     const amount = 100;
     const diff = 50;
     switch(type){
-        case "orders":
+        case "orders": 
             data={
                 title:"MY ORDERS",
                 isMoney:false,
