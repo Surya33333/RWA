@@ -57,13 +57,13 @@
     .button{
         box-shadow: 10px 5px 5px black;
         border-radius: 10px;
-        background-image: linear-gradient(to left bottom, #ececec, #4ecc71);
+        background-color: #4ecc71;
     }
 
     .link{
         color: #4ecc71;
         font-weight: bold;
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 

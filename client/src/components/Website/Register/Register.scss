@@ -2,6 +2,10 @@ body{
     background-color: green;
 }
 
+.main{
+    height: fit-content;
+    background-image: linear-gradient(to right bottom, #ececec, #2ecc71); /*Top left to Right Bottom*/
+}
 
 .link{
     font-weight:bold;
@@ -9,13 +13,13 @@ body{
 }
 
 .forms{
-    margin: 25vh auto;
     width: 300px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgb(207, 207, 207);
     border: 1px solid gray;
     text-align: center;
+
     .form-head{
         text-align: center;
         font-weight: bold;
@@ -37,6 +41,16 @@ body{
     .form-error{
         color: red;
         font-size: smaller;
+    }
+
+    .form-footer{
+        color: white;
+        font-weight: bold;
+    }
+
+    .link{
+        text-decoration: none;
+        color: #2ecc71;
     }
 }
 
