@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 // import Pricing from "./components/Website/pricing";
 import Register from "./components/Website/Register/Register.js";
 import Login from "./components/Website/Login/Login.js";
+import ResetPassword from "./components/Website/ResetPassword/ResetPassword.js";
 import UserDashboard from "./components/AdminPanel/AdminHome/AdminHome.js";
 import Orders from "./components/AdminPanel/OrdersList/OrdersList.js";
 import SelectedOrder from "./components/AdminPanel/SelectedOrder/SelectedOrder.js";
@@ -37,6 +38,7 @@ root.render(
       <Route path="pricing" element={<Pricing />} /> */}
       <Route path="register" element={<Register />} />
       <Route path="login" element={<Login />} />  
+      <Route path="resetpassword" element={<ResetPassword />} />  
       <Route path="dashboard" element={<UserDashboard/>} />
       <Route path="orders" element={<Orders/>} />
       <Route path="account" element={<Account/>} />

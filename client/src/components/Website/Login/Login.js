@@ -99,7 +99,7 @@ export default function Login() {
                     />
                 </Form.Field><br></br>
                 {errors.password && <p className="form-error">Password Must have 6 charecters "Aa@1"</p>}
-                                <Button type='submit' className="button">Login</Button><br></br>
+                <Button type='submit' className="button">Login</Button><br></br>
                 <h6 className="form-footer">Not Registered ?  <Link className="link" to="/register">Register</Link> | <Link className="link" to="/">Home</Link>  </h6>
                 <h6 className="form-footer"><Link className="link" to="/resetpassword">Forgot password ?</Link></h6>
             </Form>

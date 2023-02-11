@@ -47,7 +47,8 @@ export default function Register() {
 
     return (
 
-    <div className="forms">
+    <div className="main">
+        <div className="forms">
         <div className="form-body">{
             error.length > 0 && (
                 <div className="form-error">
@@ -94,14 +95,15 @@ export default function Register() {
                     />
                 </Form.Field>
                 {errors.password && <p className="form-error">Password Must have 6 charecters with type "Aa@1"</p>}<br></br>
-                <p style={{fontSize:'smaller'}}>By Continuing, you agree to SendIt's 
-                    <Link to="/terms&conditions" style={{textDecoration:'none', color:'#46cb72', fontWeight:'bold', paddingLeft:'10'}}>Terms and Conditions </Link> and 
-                    <Link to="/privacypolicy"  style={{textDecoration:'none', color:'#46cb72',fontWeight:'bold'}}>Privacy Policy</Link> 
+                <p className="text-slate-100">By Continuing, you agree to SendIt's 
+                    <Link to="/terms&conditions" style={{textDecoration:'underline', color:'#46cb72', fontWeight:'bold', paddingLeft:'10'}}> Terms and Conditions </Link> and 
+                    <Link to="/privacypolicy"  style={{textDecoration:'underline', color:'#46cb72',fontWeight:'bold'}}> Privacy Policy </Link> 
                 </p>
                 <Button type='submit' className="button">Submit</Button><br></br>
-                <h6 className="form-footer">Already Registered ? <Link to="/login">Log In </Link> | <Link to="/">Home</Link> </h6>
+                <h6 className="form-footer">Already Registered ? <Link className="link" to="/login">Log In </Link> | <Link className="link" to="/">Home</Link> </h6>
             </Form>
         </div>
+    </div>
     </div>
     );
 
