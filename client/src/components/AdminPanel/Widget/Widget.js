@@ -1,36 +1,42 @@
 import React from "react";
-import { Arrow90degUp, Person, Wallet } from "react-bootstrap-icons";
+import * as Icon from 'react-bootstrap-icons';
 import "./Widget.scss";
 import { Link } from "react-router-dom";
 
 
 const Widget = ({type}) =>{
+
     let data;
-    const amount = 100;
+    let walletbalance = 360;
+    const orders = 23;
     const diff = 50;
+
     switch(type){
         case "orders": 
             data={
                 title:"MY ORDERS",
                 isMoney:false,
+                value:orders,
                 link:<Link to="/orders" style={{textDecoration:"none", color:"black"}}>See all Orders</Link>,
-                icon:<Person className="icon" style={{color:"black",backgroundColor:"skyblue"}}/>,
+                icon:<Icon.HouseFill className="icon" style={{color:"black",backgroundColor:"skyblue"}}/>,
             };
             break;
         case "sample":
             data={
                 title:"SAMPLE",
                 isMoney:false,
-                link:<Link to="/dashboard/sample" style={{textDecoration:"none", color:"black"}}>See Sample</Link>,
-                icon:<Person className="icon" style={{color:"black",backgroundColor:"skyblue"}}/>,
+                value:"20",
+                link:<Link to="/sample" style={{textDecoration:"none", color:"black"}}>See Sample</Link>,
+                icon:<Icon.Person className="icon" style={{color:"black",backgroundColor:"skyblue"}}/>,
             };
             break;
         case "balance":
             data={
-                title:"WALLET BALANCE",
-                isMoney:false,
-                link:<Link to="/dashboard/wallet" style={{textDecoration:"none", color:"black"}}>Add Money</Link>,
-                icon:<Wallet className="icon" style={{color:"white",backgroundColor:"gray"}}/>,
+                title:"WALLET",
+                isMoney:true,
+                value:walletbalance,
+                link:<Link to="/wallet" style={{textDecoration:"none", color:"black"}}>Add Money</Link>,
+                icon:<Icon.Wallet className="icon" style={{color:"white",backgroundColor:"gray"}}/>,
             };
             break;
             default:
@@ -43,12 +49,12 @@ const Widget = ({type}) =>{
         <div className="widget">
             <div className="left">
                 <span className="title">{data.title}</span>
-                <span className="counter">{data.isMoney && "$"}{amount}</span>
+                <span className="counter">{data.isMoney && "$"}{data.value}</span>
                 <span className="link">{data.link}</span>
             </div>
             <div className="right">
                 <div className="percentage negative">
-                    <Arrow90degUp/>
+                    <Icon.Arrow90degUp/>
                     {diff}
                 </div>
                 {data.icon}

@@ -7,7 +7,7 @@ import Login from '../../Website/Login/Login.js';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Form, Button, FormGroup } from 'semantic-ui-react';
-import { Person, Pencil, CheckCircleFill, Camera, GeoAltFill } from "react-bootstrap-icons";
+import * as Icon from 'react-bootstrap-icons';
 import profile from '../../../Images/profile.jpg';
 import Modal from '../Modals/Modal.js';
 
@@ -50,9 +50,9 @@ const Account = () => {
                 <div className="left">
                   <div className="img">
                     <img className="img" src={profile ? (profile) : ("https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg")}/>
-                    <input type="file" accept="image/png, image/jpeg" id="upload" hidden />
-                  <label for="upload" className="imglabel"><Pencil/></label>
                   </div>
+                  <input type="file" accept="image/png, image/jpeg" id="upload" hidden />
+                  <label for="upload" className="imglabel"><Icon.Pencil title="Edit Photo"/></label>
                   <div className="text">Hello, {username}.</div>
                 </div>
                 <div className="right">
@@ -65,9 +65,9 @@ const Account = () => {
               </div>              
               
               <div className="profile">
-                <p className="title">Update Profile </p>
+                <p className="title">My Profile </p>
                   <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Form.Field className="forminput">
+                    <Form.Field className="forminput name">
                       <label>Name<i className="required">*</i></label>
                       <input
                         defaultValue={username}
@@ -80,7 +80,7 @@ const Account = () => {
                       />
                       {errors.name && <p className="form-error">UserName Should have 3 letters</p>}
                     </Form.Field> 
-                    <Form.Field className="forminput">
+                    <Form.Field className="forminput email">
                       <label>Email<i className="required">*</i></label>
                       <input
                         defaultValue={useremail}
@@ -92,7 +92,7 @@ const Account = () => {
                       />
                       {errors.email && <p className="form-error">Please Check Email ID</p>}
                     </Form.Field>
-                    <Form.Field className="forminput">
+                    <Form.Field className="forminput mobile">
                       <label>Mobile<i className="required">*</i></label>
                       <input
                         type="text"
@@ -103,7 +103,7 @@ const Account = () => {
                       />
                       {errors.mobile && <p className="form-error">Invalid Mobile</p>}
                     </Form.Field>
-                    <Form.Field className="forminput loc">
+                    <Form.Field className="forminput location">
                       <label>Location<i className="required">*</i></label>
                       <input
                         type="text"
@@ -112,7 +112,7 @@ const Account = () => {
                           minLength: 10, maxLength: 300
                         })}
                       />
-                      <span className="icon"><GeoAltFill  onClick={()=>{showModal(true)}} /></span>
+                      <Icon.GeoAltFill className="locationpicker"  onClick={()=>{showModal(true)}} />
                       {errors.location && <p className="form-error">Location Is Required</p>}
                     </Form.Field>
                     <Form.Field className="forminput pincode">
@@ -124,20 +124,20 @@ const Account = () => {
                           minLength: 6, maxLength: 6
                         })}
                       />
-                      {errors.pincode && <p className="form-error">Pincode Is Required</p>}
+                      {errors.pincode && <p className="form-error">Invalid Pincode </p>}
                     </Form.Field>
-                    <Form.Field className="forminput pincode">
-                      <label>Pincode<i className="required">*</i></label>
+                    <Form.Field className="forminput mobile">
+                      <label>Mobile<i className="required">*</i></label>
                       <input
                         type="text"
-                        {...register("pincode", {
+                        {...register("mobile", {
                           required: true,
-                          minLength: 6, maxLength: 6
+                          minLength: 10, maxLength: 10
                         })}
                       />
-                      {errors.pincode && <p className="form-error">Pincode Is Required</p>}
+                      {errors.mobile && <p className="form-error">Invalid Mobile</p>}
                     </Form.Field>
-                    <Button type='submit' className="button">Save</Button><br></br>
+                    <Button type='submit' className="button" title="Update Profile Data">Save</Button><br></br>
                   </Form>
               </div>
             </div>

@@ -30,8 +30,8 @@
 
                 .imglabel{
                     position: relative;
-                    top:30px;
-                    bottom: 0px;
+                    top:70px;
+                    bottom: 0;
                     cursor: pointer;
                 }
 
@@ -78,8 +78,6 @@
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
         .profile{
-            text-align: center;
-            display: flex;
             justify-content: space-evenly;
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
             box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
@@ -92,6 +90,7 @@
             .title{
                 font-weight: bold;
                 font-size: larger;
+                margin-left: 115px;
             }
 
             form{
@@ -103,16 +102,14 @@
                 .forminput{
                     width: 40%;
 
-                    .loc{
+                    .location{
                         position: absolute;
+                        padding: 10px;
                     }
 
-                    .icon{
+                    .locationpicker{
                         position: relative;
-                        top:0px;
-                        right:25px;
-                        cursor: pointer;
-                        color: lightgreen;
+                        bottom: 25px;
                     }
 
                     label{
@@ -159,3 +156,4 @@
         }
     }
 }
+
