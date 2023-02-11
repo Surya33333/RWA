@@ -10,13 +10,13 @@ const Settings = () => {
     return (
         <>
           {!usertoken ? (<Login />) : (
-            <div className="account">
+            <div className="settings">
               <SideBar />
-              <div className="accountContainer">
+              <div className="settingsContainer">
                 <NavBar />
-                <div className="useraccount">
+                <div className="test">
                     Settings
-              </div>
+                </div>
               </div>
             </div>
           )}

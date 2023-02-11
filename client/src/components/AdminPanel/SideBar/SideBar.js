@@ -40,14 +40,14 @@ const Menu = [
 
 const SideNavBar = () => {
 
-  const [open, setopen] = useState(false);
+  const [open, setopen] = useState(true);
 
     return (
-      <div className={`sidebar ${open ? "w-60": "w-20" } duration-300`}>
-        <div className="top"><Icon.ArrowLeftShort onClick={()=>{setopen(!open)}} className={`menutoggle rounded-full  ${!open && 'rotate-180 mr-5' }`}/>
+      <div className={`sidebar ${open ? "w-40": "w-20" } duration-300`}>
+        <div className="top"><Icon.ArrowLeftShort onClick={()=>{setopen(!open)}} className={`menutoggle  ${!open && 'rotate-180 mr-5' }`}/>
           <span className={`logo ${open ? "": "hidden" }`}>LOGO</span>
         </div><hr></hr>
-        <div className="center">
+        <div className="center" onMouseEnter={() => setopen(true)} onMouseLeave={() => setopen(false)}>
           <ul>
             {Menu.map((item,index)=>{
               return <Link onClick={item.action} key={index} to={item.path} style={{textDecoration:"none"}} ><li><span className="icon">{item.icon}</span><span className={`${open ? "": "scale-0" }`}>{item.title}</span></li></Link>
@@ -55,8 +55,8 @@ const SideNavBar = () => {
           </ul>
         </div>
         <div className="bottom">
-          <div className="coloroption"></div>
-          <div className="coloroption"></div>
+          {/* <div className="coloroption"></div>
+          <div className="coloroption"></div> */}
         </div>
       </div>
     ); 

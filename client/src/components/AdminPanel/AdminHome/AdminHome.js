@@ -20,7 +20,7 @@ function UserDashboard(){
         <>
             {!usertoken  ? (<Login />):(
                 <div className="home">
-                    <SideNavBar/>
+                    <SideNavBar />
                     <div className="homecontainer">
                         <AdminNavabar/>
                         <div className="widgets">

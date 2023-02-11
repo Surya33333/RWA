@@ -59,14 +59,15 @@ export default function Login() {
 
     return (
 
-        <div className="forms">
-            <div className="">{
+        <div className="main bg-gradient-to-l from-green-400">
+
+<div className="forms">
+            <div>{
             error.length > 0 && (
-                <div className="form-error">
+                <div className="form-error text-slate-100">
                     <p>{error}</p>
                 </div>
             )}
-
             {
                 message.length > 0 && (
                     <div className="form-success">
@@ -74,7 +75,7 @@ export default function Login() {
                     </div>
                 )}
             <Form onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="form-head"> LOGIN</h2>
+                <div><h2 className="form-head">LOGIN</h2></div>
                 <Form.Field className="form-field">
                     <input
                         placeholder='Email'
@@ -103,6 +104,8 @@ export default function Login() {
                 <h6 className="form-footer"><Link className="link" to="/resetpassword">Forgot password ?</Link></h6>
             </Form>
         </div>
+        </div>
+
         </div>
     );
 

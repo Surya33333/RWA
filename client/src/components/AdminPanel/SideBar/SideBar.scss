@@ -3,7 +3,8 @@
     min-height: 100vh;
     padding-right: 10px;
     line-height: 3;
-    border: 1px solid #333;
+    height: max-content;
+    border: 1px solid lightgreen;
     box-shadow: 4px 0 5px -2px rgb(224, 222, 222);
 
 .top{
@@ -19,8 +20,13 @@
         top: 80;right:0;
         font-size: larger;
         cursor: pointer;
-        border-radius: 50%;
-        border: 2px solid green;
+        border: 2px solid rgb(61, 120, 61);
+        background-color: #fff; 
+        border-radius: 20%;
+
+        &:hover{
+            background-color: #fff;
+        }
     }
 }
 
@@ -47,6 +53,10 @@
         &:hover{
             background-color: rgb(106, 166, 106);
             border-radius: 10px;
+        }
+
+        &:hover > .sidebar{
+            width: max-content;
         }
 
         &:hover > .icon{
@@ -103,11 +113,4 @@ ul{
 hr{
     height: 0;
     border: 1px solid rgb(92, 166, 113);
-}
-
-.open{
-    width: 200px;
-}
-.close{
-    width: 100px;
 }
