@@ -59,12 +59,16 @@ export default function Login() {
 
     return (
 
-        <div className="main bg-gradient-to-l from-green-400">
-
-<div className="forms">
+        <div className="main flex m-auto px-10 justify-center" >
+        
+        <div className="text-slate-900 mt-[20rem] pl-[100px] text-left">
+           <h1 className="font-bold text-green-500"> Login to your account</h1>
+            <p className="text-2xl text-slate-900">Get access to all your orders to track them online any time</p>
+        </div> 
+<div className="forms shadow-2">
             <div>{
             error.length > 0 && (
-                <div className="form-error text-slate-100">
+                <div className="text-slate-100">
                     <p>{error}</p>
                 </div>
             )}
