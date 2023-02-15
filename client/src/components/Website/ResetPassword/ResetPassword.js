@@ -50,12 +50,12 @@ export default function ResetPassword() {
 
     return (
 
-        <div className="main bg-gradient-to-l from-green-400">
+        <div className="main">
 
 <div className="forms">
             <div>{
             error.length > 0 && (
-                <div className="form-error text-slate-100">
+                <div className="form-error">
                     <p>{error}</p>
                 </div>
             )}
@@ -67,8 +67,8 @@ export default function ResetPassword() {
                 )}
 
             <Form onSubmit={handleSubmit(onSubmit)} >
-                <div><h4 className="form-head text-lg">Password Reset</h4>
-                    <p className="tag text-slate-200 font-black pt-3 text-sm">Enter your email for password reset</p>
+                <div><h4 className="form-head">Password Reset</h4>
+                    <p className="tag text-slate-900 font-black pt-3 text-sm">Enter your email for password reset</p>
                 </div>
                 <Form.Field className="form-field">
                     <input

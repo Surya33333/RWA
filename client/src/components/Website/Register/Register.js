@@ -46,8 +46,12 @@ export default function Register() {
     }
 
     return (
-
-    <div className="main">
+    <div className="main flex m-auto px-10 justify-center" >
+        
+        <div className="content text-slate-900 mt-[20rem] pl-[100px] text-left">
+           <h1 className="font-semibold text-green-500">Create an account now</h1>
+            <p className="text-2xl text-slate-900">Get access to all your orders to track them online any time</p>
+        </div> 
         <div className="forms">
         <div className="form-body">{
             error.length > 0 && (
@@ -63,7 +67,7 @@ export default function Register() {
                     </div>
                 )}
             <Form onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="form-head">REGISTER</h2>
+                <h2 className="form-head text-slate-100">Register</h2>
                 <Form.Field className="form-field">
                     <input
                         placeholder='First Name'
@@ -95,11 +99,11 @@ export default function Register() {
                     />
                 </Form.Field>
                 {errors.password && <p className="form-error">Password Must have 6 charecters with type "Aa@1"</p>}<br></br>
-                <p className="text-slate-100">By Continuing, you agree to SendIt's 
+                <p className="terms">By Continuing, you agree to SendIt's 
                     <Link to="/terms&conditions" style={{textDecoration:'underline', color:'#46cb72', fontWeight:'bold', paddingLeft:'10'}}> Terms and Conditions </Link> and 
                     <Link to="/privacypolicy"  style={{textDecoration:'underline', color:'#46cb72',fontWeight:'bold'}}> Privacy Policy </Link> 
                 </p>
-                <Button type='submit' className="button">Submit</Button><br></br>
+                <Button type='submit' className="button ">Submit</Button><br></br>
                 <h6 className="form-footer">Already Registered ? <Link className="link" to="/login">Log In </Link> | <Link className="link" to="/">Home</Link> </h6>
             </Form>
         </div>
