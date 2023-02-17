@@ -17,6 +17,9 @@ const Settings = () => {
                 <div className="test">
                     Settings
                 </div>
+                <div className="test">
+                    Wallet
+                </div>
               </div>
             </div>
           )}
