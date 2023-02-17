@@ -4,7 +4,7 @@ import SideNav, {Toggle,Nav,NavItem,NavIcon,NavText} from "@trendmicro/react-sid
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./SideBar.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as Icon from 'react-bootstrap-icons';
 
 const Menu = [
@@ -50,7 +50,7 @@ const SideNavBar = () => {
         <div className="center" onMouseEnter={() => setopen(true)} onMouseLeave={() => setopen(false)}>
           <ul>
             {Menu.map((item,index)=>{
-              return <Link onClick={item.action} key={index} to={item.path} style={{textDecoration:"none"}} ><li><span className="icon">{item.icon}</span><span className={`${open ? "": "scale-0" }`}>{item.title}</span></li></Link>
+              return <li><NavLink activeClassName="active" className="nav-items" onClick={item.action} key={index} to={item.path} style={{textDecoration:"none"}} ><span className="icon">{item.icon}</span><span className={`${open ? "": "scale-0" }`}>{item.title}</span></NavLink></li>
             })}
           </ul>
         </div>

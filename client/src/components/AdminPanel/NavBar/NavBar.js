@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="navbar">
             <div className="wrapper">
                 <div className="search">
-                    <input type="text" placeholder="Search.." /><Search/>
+                    <input type="text" placeholder="Search.." /><Search className="icon"/>
                 </div>
                 <div className="items">
                     <div className="item">

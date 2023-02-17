@@ -1,5 +1,5 @@
 .sidebar{
-    background-color: lightgreen;
+    background-color: rgb(88, 88, 88);
     min-height: 100vh;
     padding-right: 10px;
     line-height: 3;
@@ -34,11 +34,22 @@
     position: relative;
     font-size: 20px;
     font-weight: bold;
-    color:rgb(0, 0, 0);
+    color:rgb(247, 245, 245);
 }
 .center{
     padding-left:10px;
     text-decoration: none;
+
+    .active{
+        background-color: rgb(112, 113, 112);
+        border-radius: 10px;
+    }
+
+    .nav-items{
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
 
     li{
         align-items:center;
@@ -47,11 +58,10 @@
         padding-bottom: 3px;
         padding-left: 10px;
         padding-right: 10px;
-        display: flex;
         cursor: pointer;
     
         &:hover{
-            background-color: rgb(106, 166, 106);
+            background-color: rgb(112, 113, 112);
             border-radius: 10px;
         }
 
@@ -60,19 +70,19 @@
         }
 
         &:hover > .icon{
-            color: rgb(255, 255, 255);
+            color: rgb(242, 236, 236);
         }
 
         &:hover > span{
-            color: rgb(255, 255, 255);
+            color: rgb(239, 233, 233);
         }
 
         .icon{
-            color: rgb(0, 0, 0);
+            color: rgb(250, 247, 247);
         }
 
         span{
-            color: rgb(0, 0, 0);
+            color: rgb(242, 237, 237);
             margin-left: 10px;
             font-weight: 600;
             padding:0px;
