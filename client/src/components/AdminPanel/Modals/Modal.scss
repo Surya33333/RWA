@@ -11,14 +11,13 @@
 
     .mapmodal{
       position: relative;
-      top: 20px;
+      top: 40px;
       left: 20px;
-      width: fit-content;
+      width: max-content;
       height: 200px;
       background-color: white;
       margin: auto;
-      border: 2px solid lightgreen;
-      padding:10px;
+      padding:20px;
       border-radius: 5px;
 
   .head{
@@ -35,17 +34,17 @@
       color:black;
     }
   }
-
+  
   .foot{
-
+    display: flex;
+    gap:10px;
+    justify-content: flex-end;
     cursor: pointer;
-    float: right;
-    vertical-align: top;
     position: absolute;
     right: 10px;
     bottom: 10px;
     
-    button{
+    div{
       border-radius: 5px;
       border:none;
       outline:none;
