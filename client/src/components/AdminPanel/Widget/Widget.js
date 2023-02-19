@@ -35,7 +35,7 @@ const Widget = ({type}) =>{
                 title:"WALLET",
                 isMoney:true,
                 value:walletbalance,
-                link:<Link to="/wallet" style={{textDecoration:"none", color:"black"}}>Add Money</Link>,
+                link:<Link to="/settings" style={{textDecoration:"none", color:"black"}}>Add Money</Link>,
                 icon:<Icon.Wallet className="icon" style={{color:"white",backgroundColor:"gray"}}/>,
             };
             break;

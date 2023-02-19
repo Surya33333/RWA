@@ -56,7 +56,7 @@ const Account = () => {
                   <div className="text">Hello, {username}.</div>
                 </div>
                 <div className="right">
-                  <label className="imglabel">Update</label>
+                  <label className="imglabel shadow-xl hover:translate-x-1 hover:scale-110 duration:800 rounded-lg">Update</label>
                 </div>
               </div>
 
@@ -84,6 +84,8 @@ const Account = () => {
                       <label>Email<i className="required">*</i></label>
                       <input
                         defaultValue={useremail}
+                        placeholder="Type here.."
+                        className="font-thin"
                         type="email"
                         {...register("email", {
                           required: true,
@@ -95,6 +97,8 @@ const Account = () => {
                     <Form.Field className="forminput mobile">
                       <label>Mobile<i className="required">*</i></label>
                       <input
+                      placeholder="Type here.."
+                      className="font-thin"
                         type="text"
                         {...register("mobile", {
                           required: true,
@@ -106,6 +110,8 @@ const Account = () => {
                     <Form.Field className="forminput location">
                       <label>Location<i className="required">*</i></label>
                       <input
+                      placeholder="Type here.."
+                      className="font-thin"
                         type="text"
                         {...register("location", {
                           required: true,
@@ -118,6 +124,8 @@ const Account = () => {
                     <Form.Field className="forminput pincode">
                       <label>Pincode<i className="required">*</i></label>
                       <input
+                      placeholder="Type here.."
+                      className="font-thin"
                         type="text"
                         {...register("pincode", {
                           required: true,
@@ -129,6 +137,8 @@ const Account = () => {
                     <Form.Field className="forminput mobile">
                       <label>Mobile<i className="required">*</i></label>
                       <input
+                      placeholder="Type here.."
+                      className="font-thin"
                         type="text"
                         {...register("mobile", {
                           required: true,
@@ -137,7 +147,7 @@ const Account = () => {
                       />
                       {errors.mobile && <p className="form-error">Invalid Mobile</p>}
                     </Form.Field>
-                    <Button type='submit' className="button" title="Update Profile Data">Save</Button><br></br>
+                    <Button type='submit' className="shadow-xl hover:translate-x-1 duration:800 bg-green-500 rounded-xl" title="Update Profile Data">Save </Button><br></br>
                   </Form>
               </div>
             </div>
