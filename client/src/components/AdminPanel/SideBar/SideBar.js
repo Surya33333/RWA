@@ -1,6 +1,5 @@
 import {React, useState} from "react";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import SideNav, {Toggle,Nav,NavItem,NavIcon,NavText} from "@trendmicro/react-sidenav";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./SideBar.scss";
